@@ -7,6 +7,7 @@ interface ICardProps {
   title: String;
   popularity: String;
   releaseDate: String;
+  handleClick: () => void;
 }
 
 export const Card: FC<ICardProps> = ({
@@ -15,6 +16,7 @@ export const Card: FC<ICardProps> = ({
   title,
   popularity,
   releaseDate,
+  handleClick,
 }) => {
   return (
     <Box borderRadius="md" p="2">
@@ -35,7 +37,7 @@ export const Card: FC<ICardProps> = ({
           <Text>Popularity: {popularity}</Text>
           <Text>Release Date: {releaseDate}</Text>
 
-          <Button>
+          <Button onPress={handleClick}>
             <Text>Movie Details</Text>
           </Button>
         </Box>

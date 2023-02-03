@@ -1,5 +1,6 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import DetailsView from "../views/DetailsView/DetailsView";
 import IndexView from "../views/IndexView";
 
 const Stack = createNativeStackNavigator();
@@ -20,14 +21,13 @@ const AppStack = () => (
           },
         }}
       />
-      {/* <Stack.Screen
-        name='Show'
-        component={ShowScreen}
-        options={({ route }) => ({
-          title: route.params.label
-        })}
-      /> */}
-      {/* <Stack.Screen name='Web' component={WebScreen} /> */}
+      <Stack.Screen
+        name="Details"
+        component={DetailsView}
+        // options={({ route }) => ({
+        //   ...route
+        // })}
+      />
     </Stack.Navigator>
   </NavigationContainer>
 );
